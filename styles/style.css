@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --BackgroundColor: #0F0F0F;
+    --SecondColor: rgba(158,221,255,90);
+    --HeaderBackgroundColor: rgba(50,50,50,30);
+    --TitlesFont: "Pixelify Sans";
+    --ParagraphyFont: "Quantico";
+}
+
+html{
+    scroll-behavior: smooth;
+}

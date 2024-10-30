@@ -208,3 +208,18 @@ header{
         }
     }
 }
+
+#aboutMe{
+    p{
+        width: 1000px;
+
+        font-family: var(--ParagraphyFont);
+        font-weight: normal;
+
+        color: var(--FontColor);
+
+   
+
+        margin: auto;
+    }
+}

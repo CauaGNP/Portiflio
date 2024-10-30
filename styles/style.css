@@ -87,3 +87,87 @@ header{
     display: flex;
     gap: 60px;
 }
+
+/* Main */
+
+.titleMain{
+    font-family: var(--TitlesFont);
+    font-weight: normal;
+    font-size: 50px;
+
+    color: var(--FontColor);
+
+    text-align: center;
+}
+
+#whoIam{
+    margin: 64px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    h1{
+        font-family: var(--TitlesFont);
+        font-weight: normal;
+        font-size: 50px;
+
+        color: var(--FontColor);
+
+        margin-bottom: 16px;
+    }
+
+    p{
+        font-family: var(--ParagraphyFont);
+        font-size: 20px;
+        
+        color: var(--FontColor);
+
+        width: 400px;
+    }
+
+    img{
+        width: 400px;
+        height: 400px;
+
+        border-radius: 8px;
+    }
+}
+
+.tecnologies{
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    img{
+        width: 500px;
+        height: 500px;
+    }
+    .everyTecnologies{
+        display: grid;
+        grid-row: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .iconTecnologies{
+        text-align: center;
+    
+        h1{
+            font-family: var(--ParagraphyFont);
+            font-weight: normal;
+    
+            color: var(--SecondColor);
+        }
+    
+        svg{
+            fill: var(--SecondColor);
+            width: 120px;
+            height: 120px;
+        }
+    
+    }
+}
+

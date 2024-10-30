@@ -97,6 +97,8 @@ header{
 
     color: var(--FontColor);
 
+    margin: 32px;
+
     text-align: center;
 }
 
@@ -171,3 +173,38 @@ header{
     }
 }
 
+.portfolioExemple{
+    border: 1px solid var(--SecondColor);
+    border-radius: 20px;
+
+    margin: 32px;
+    padding: 24px;
+
+    display: flex;
+
+    img{
+        border-radius: 20px;
+    
+        width:700px;
+    }
+
+    .portfolioImageSmartPhone{
+        width: 300px;
+    }
+
+    .portfolioText{
+        font-family: var(--ParagraphyFont);
+
+        color: var(--FontColor);
+
+        margin-left: 32px;
+
+        h2{
+            margin-bottom: 16px;
+        }
+
+        p{
+            width: 400px;
+        }
+    }
+}

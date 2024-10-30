@@ -5,10 +5,85 @@
     --BackgroundColor: #0F0F0F;
     --SecondColor: rgba(158,221,255,90);
     --HeaderBackgroundColor: rgba(50,50,50,30);
+    --HoverColor: rgba(255,255,255,0.1);
+    --FontColor: #FFFFFF;
     --TitlesFont: "Pixelify Sans";
     --ParagraphyFont: "Quantico";
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html{
     scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--BackgroundColor);
+}
+
+header{
+    background-color: var(--HeaderBackgroundColor);
+    color: var(--FontColor);
+
+    height: 80px;
+
+    padding: 16px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    h1{
+        font-family: var(--TitlesFont);
+        font-weight: normal;
+        font-size: 40px;
+    }
+
+    a{
+        font-family: var(--ParagraphyFont);
+        color: var(--FontColor);
+
+        text-decoration: none;
+        text-align: center;
+
+        width: 110px;
+
+        padding: 8px;
+    }
+
+    a:hover{
+        background-color: var(--HoverColor);
+
+        border-radius: 20px;
+
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        transition: all 0.5s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--SecondColor);
+        filter: blur(2px);
+    }
+}
+
+#links{
+    display: flex;
+    gap: 60px;
 }

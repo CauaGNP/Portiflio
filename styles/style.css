@@ -7,8 +7,20 @@
     --HeaderBackgroundColor: rgba(50,50,50,30);
     --HoverColor: rgba(255,255,255,0.1);
     --FontColor: #FFFFFF;
+    --BorderRepoColor: #5f5f5f;
     --TitlesFont: "Pixelify Sans";
     --ParagraphyFont: "Quantico";
+}
+
+#bodyLightTheme{
+        background-color: #FFFFFF;
+    
+    h1,h2,h3,p,a{
+        color: #0F0F0F;
+    }
+    svg{
+        fill: #0F0F0F;
+    }
 }
 
 *{
@@ -53,22 +65,25 @@ header{
         text-decoration: none;
         text-align: center;
 
-        width: 110px;
+        width: 100px;
 
         padding: 8px;
+        position: relative;
     }
 
-    a:hover{
-        background-color: var(--HoverColor);
+    a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--FontColor);
+        transition: width 0.5s ease;
+    }
 
-        border-radius: 20px;
-
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        transition: all 0.5s;
+    a:hover::after {
+        width: 100%;
     }
 
     &::after {
@@ -89,6 +104,11 @@ header{
 }
 
 /* Main */
+svg{
+    path{
+        fill: var(--SecondColor);
+    }
+}
 
 .titleMain{
     font-family: var(--TitlesFont);
@@ -209,6 +229,42 @@ header{
     }
 }
 
+#repository{
+    padding: 32px;
+
+    h1{
+        font-family: var(--ParagraphyFont);
+        font-size: 24px;
+        
+        color: var(--FontColor);
+        margin-bottom: 6px;
+    }
+
+    a{
+        font-family: var(--ParagraphyFont);
+        text-decoration: none;
+
+        color: var(--FontColor);
+    
+        border-bottom: 1px solid var(--BorderRepoColor);
+
+        padding: 8px;
+        margin-bottom: 16px;
+
+        display: block;
+    }
+
+    a:hover{
+        font-size: 20px;
+
+        color: var(--SecondColor);
+
+        transition: all .3s;
+    }
+
+}
+
+
 #aboutMe{
     p{
         width: 1000px;
@@ -300,8 +356,6 @@ header{
     
 }
 
-
-
 #passwordDiv{
     width: 200px;
 
@@ -325,5 +379,51 @@ header{
         border-radius: 20px; 
 
         transition: background-color 0.5s;
+    }
+}
+
+/* Footer */
+
+footer{
+    height:100px;
+
+    border-top:1px solid var(--SecondColor);
+
+    margin-top: 64px;
+    padding: 16px;
+
+
+    h2{
+        font-family: var(--ParagraphyFont);
+        font-weight: normal;
+        font-size: 20px;
+
+        color: var(--FontColor);
+    }
+
+    #socialFooter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .contactLink{
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            display: flex;
+
+            a{
+                font-family: var(--ParagraphyFont);
+                text-decoration: none;
+
+                color: var(--FontColor);
+            }
+
+            svg{
+                width: 45px;
+            }
+            
+        }
     }
 }

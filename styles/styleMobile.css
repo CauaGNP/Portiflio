@@ -151,7 +151,7 @@
     }
 
     footer{
-        height: 30%;
+        height: 200px;
 
         #socialFooter{
             flex-direction: column;

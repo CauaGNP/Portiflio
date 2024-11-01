@@ -249,7 +249,7 @@ svg{
     
         border-bottom: 1px solid var(--BorderRepoColor);
 
-        padding: 8px;
+        padding-bottom: 8px;
         margin-bottom: 16px;
 
         display: block;

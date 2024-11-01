@@ -12,6 +12,7 @@
     --ParagraphyFont: "Quantico";
 }
 
+/* Preparando para a troca de cores */
 #bodyLightTheme{
         background-color: #FFFFFF;
     
@@ -319,6 +320,7 @@ svg{
 }
 
 #contacts{
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -349,11 +351,10 @@ svg{
             text-decoration: none;
         }
 
-        img{
-            width: 40px;
+        svg{
+            width: 50px;
         }
     }
-    
 }
 
 #passwordDiv{

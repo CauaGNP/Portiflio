@@ -339,8 +339,7 @@ svg{
         display: flex;
         flex-direction: row;
         align-items: center;
-        gap: 12px;
-
+  
         a, p{
             font-family: var(--ParagraphyFont);
             font-weight: normal;
@@ -349,11 +348,22 @@ svg{
             color: var(--FontColor);
 
             text-decoration: none;
+
+            margin-left: 6px;
         }
 
         svg{
-            width: 50px;
+            width: 40px;
         }
+    }
+
+    #contactDiv{
+        height: 200px;
+        width: 400px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -422,7 +432,7 @@ footer{
             }
 
             svg{
-                width: 45px;
+                height: 40px;
             }
             
         }

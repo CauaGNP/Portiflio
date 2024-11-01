@@ -13,8 +13,12 @@ let secretPassword = [];
 function randowNum(){
     for(i = 0; i < 4; i++){
         secretPassword[i] =  Math.floor(Math.random() * 10);    
-        console.log(secretPassword)
-    }
+        console.log(secretPassword);
+    };
+
+    const divPassword = document.querySelector('#secretPasswordDiv');
+    
+
 }
 
 function displayPassword(inputValue){
@@ -22,15 +26,17 @@ function displayPassword(inputValue){
         alert('insira 4 números');
         return;
     } 
-    // console.log(inputValue)
-    // for(i = 0; i < 4; i++){
-    //     const num = Number(inputValue[i]);
-    //     secretPassword.forEach(num => {
-    //         if(secretPassword == num){
-    //             console.log('aaaa')
-    //         }
-    //     });
-    // }
+    for(i = 0; i < 4; i++){
+        const num = inputValue[i];
+        for(n = 0; n < 4; n++){
+            if(secretPassword[n] == inputValue[i]){
+            // Indicar para o usuario se os números escolhidos tem no array
+            }
+        }
+        if(secretPassword[i] == inputValue[i]){
+            // indicar para o usuario se a posição está correta
+        }
+    }
 }
 
 // Display password

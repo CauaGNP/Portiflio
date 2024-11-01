@@ -4,8 +4,8 @@ document.querySelector('#newPassword')
 document.querySelector('#submitNum')
     .addEventListener('click', inputValue);
 
-document.querySelector('#displayPassword')
-    .addEventListener('click', displayPassword);
+document.querySelector('#alertPassword')
+    .addEventListener('click', alertPassword);
 
 let secretPassword = [];    
 
@@ -13,12 +13,28 @@ let secretPassword = [];
 function randowNum(){
     for(i = 0; i < 4; i++){
         secretPassword[i] =  Math.floor(Math.random() * 10);    
+        console.log(secretPassword)
     }
+}
 
+function displayPassword(inputValue){
+    if(inputValue.length != 4){
+        alert('insira 4 números');
+        return;
+    } 
+    // console.log(inputValue)
+    // for(i = 0; i < 4; i++){
+    //     const num = Number(inputValue[i]);
+    //     secretPassword.forEach(num => {
+    //         if(secretPassword == num){
+    //             console.log('aaaa')
+    //         }
+    //     });
+    // }
 }
 
 // Display password
-function displayPassword(){
+function alertPassword(){
     alert(`Os números secretos são: ${secretPassword}`);
 }
 
@@ -26,6 +42,6 @@ function displayPassword(){
 function inputValue(){
     const inputValue = document.querySelector('#inputNum').value.split('');
 
-    console.log(inputValue);
+    displayPassword(inputValue)
 }
 

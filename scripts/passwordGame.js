@@ -23,7 +23,7 @@ function generateNum(){
     console.log(secretPassword);
 }
 
-// Display randow numbers
+// Display input numbers
 
 function displayNum(inputValue){
     inputValue.forEach((password) => {

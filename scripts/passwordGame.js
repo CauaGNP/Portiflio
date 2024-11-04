@@ -1,53 +1,90 @@
 document.querySelector('#newPassword')
-    .addEventListener('click', randowNum);
+    .addEventListener('click', generateNum);
 
 document.querySelector('#submitNum')
-    .addEventListener('click', inputValue);
+    .addEventListener('click', checkedNum);
 
 document.querySelector('#alertPassword')
-    .addEventListener('click', alertPassword);
+    .addEventListener('click', alertNum);
 
-let secretPassword = [];    
+let secretPassword = [];
+let click = 0;
+const divPassword = document.querySelector('#secretPasswordDiv');;    
 
 // Generate randow numbers 
-function randowNum(){
+function generateNum(){
     for(i = 0; i < 4; i++){
         secretPassword[i] =  Math.floor(Math.random() * 10);    
-        console.log(secretPassword);
     };
+    alert('Palavra gerada com sucesso');
 
-    const divPassword = document.querySelector('#secretPasswordDiv');
-    
+    click = click + 1;
 
+    console.log(secretPassword);
 }
 
-function displayPassword(inputValue){
+// Display randow numbers
+
+function displayNum(inputValue){
+    inputValue.forEach((password) => {
+        const paragraphy = document.createElement("p");
+        
+        paragraphy.innerText = password;
+        divPassword.appendChild(paragraphy);
+    });
+}
+
+// Get input Value
+
+function checkedNum(){
+    const input = document.querySelector('#inputNum')
+    const inputValue = input.value.split('');
+
+    let contador = 1;
+
     if(inputValue.length != 4){
         alert('insira 4 números');
         return;
     } 
+
+    if(click === 0){
+        alert('Gere um número aleatório para verificar o seu resultado');
+        return;
+    }
+
+    displayNum(inputValue);
+
     for(i = 0; i < 4; i++){
-        const num = inputValue[i];
         for(n = 0; n < 4; n++){
             if(secretPassword[n] == inputValue[i]){
-            // Indicar para o usuario se os números escolhidos tem no array
+            console.log("Existe números iguais ordenados ou n");
             }
         }
         if(secretPassword[i] == inputValue[i]){
-            // indicar para o usuario se a posição está correta
+            console.log(`${contador} número na mesma posição`);
+            contador++;
+
+            if(contador === 4){
+                alert("você venceu");
+
+                divPassword.innerHTML = '';
+
+                input.value = "";
+                input.focus();
+
+                generateNum();
+            }
         }
     }
 }
 
 // Display password
-function alertPassword(){
-    alert(`Os números secretos são: ${secretPassword}`);
+function alertNum(){
+    if(click != 0){
+        alert(`Os números secretos são: ${secretPassword}`);
+        generateNum();
+    }else{
+        alert('Gere um número aleatório para visualizar o resultado');
+    }
+
 }
-
-// Get value input
-function inputValue(){
-    const inputValue = document.querySelector('#inputNum').value.split('');
-
-    displayPassword(inputValue)
-}
-

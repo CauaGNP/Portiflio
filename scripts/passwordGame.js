@@ -33,13 +33,13 @@ function generateNum(){
 // Display input numbers
 
 function displayNum(inputValue, checked){
-    inputValue.forEach((password) => {
+    console.log(checked)
+    inputValue.forEach((password, index) => {
+        console.log(password)
         const paragraphy = document.createElement("p");
         paragraphy.innerText = password;
 
-        for(i = 0; i < checked.length; i++){
-            
-        }
+        paragraphy.classList.add(className[checked[index]])
 
         divPassword.appendChild(paragraphy);
     });
@@ -50,10 +50,9 @@ function displayNum(inputValue, checked){
 function checkedNum(){
     const input = document.querySelector('#inputNum')
     const inputValue = input.value.split('');
-    const checkedArr = [];
+    const checkedArr = [0,0,0,0];
 
     let cows = 0;
-    let bulls = 0;
 
     if(inputValue.length != 4){
         alert('insira 4 números');
@@ -66,8 +65,7 @@ function checkedNum(){
     }
 
     for(i = 0; i < 4; i++){
-        if(secretPassword[i] == inputValue[i]){
-            console.log(`${cows} número na mesma posição`);
+        if(secretPassword[i] == inputValue[i]){;
             cows++;
             checkedArr[i] = 2;
 
@@ -81,16 +79,12 @@ function checkedNum(){
 
                 generateNum();
             }
-        }else if(!secretPassword[i] == inputValue[i]){
+        }else{
             for(n = 0; n < 4; n++){
                 if(secretPassword[n] == inputValue[i]){
-                    console.log(`Existe ${bulls} números não ordenados`);
-                    bulls++
+                    checkedArr[i] = 1;
                 }
-                checkedArr[i] = 1;
             }
-        }else{
-            checkedArr[i] = 0;
         }
     }
     displayNum(inputValue,checkedArr);

@@ -9,7 +9,14 @@ document.querySelector('#alertPassword')
 
 let secretPassword = [];
 let click = 0;
+
 const divPassword = document.querySelector('#secretPasswordDiv');;    
+
+const className ={
+    0 : "NE",
+    1 : "PE",
+    2 : "PC"
+}
 
 // Generate randow numbers 
 function generateNum(){
@@ -25,11 +32,15 @@ function generateNum(){
 
 // Display input numbers
 
-function displayNum(inputValue){
+function displayNum(inputValue, checked){
     inputValue.forEach((password) => {
         const paragraphy = document.createElement("p");
-        
         paragraphy.innerText = password;
+
+        for(i = 0; i < checked.length; i++){
+            
+        }
+
         divPassword.appendChild(paragraphy);
     });
 }
@@ -39,8 +50,10 @@ function displayNum(inputValue){
 function checkedNum(){
     const input = document.querySelector('#inputNum')
     const inputValue = input.value.split('');
+    const checkedArr = [];
 
-    let contador = 1;
+    let cows = 0;
+    let bulls = 0;
 
     if(inputValue.length != 4){
         alert('insira 4 números');
@@ -52,19 +65,13 @@ function checkedNum(){
         return;
     }
 
-    displayNum(inputValue);
-
     for(i = 0; i < 4; i++){
-        for(n = 0; n < 4; n++){
-            if(secretPassword[n] == inputValue[i]){
-            console.log("Existe números iguais ordenados ou n");
-            }
-        }
         if(secretPassword[i] == inputValue[i]){
-            console.log(`${contador} número na mesma posição`);
-            contador++;
+            console.log(`${cows} número na mesma posição`);
+            cows++;
+            checkedArr[i] = 2;
 
-            if(contador === 4){
+            if(cows === 4){
                 alert("você venceu");
 
                 divPassword.innerHTML = '';
@@ -74,8 +81,19 @@ function checkedNum(){
 
                 generateNum();
             }
+        }else if(!secretPassword[i] == inputValue[i]){
+            for(n = 0; n < 4; n++){
+                if(secretPassword[n] == inputValue[i]){
+                    console.log(`Existe ${bulls} números não ordenados`);
+                    bulls++
+                }
+                checkedArr[i] = 1;
+            }
+        }else{
+            checkedArr[i] = 0;
         }
     }
+    displayNum(inputValue,checkedArr);
 }
 
 // Display password

@@ -10,7 +10,8 @@ document.querySelector('#alertPassword')
 let secretPassword = [];
 let click = 0;
 
-const divPassword = document.querySelector('#secretPasswordDiv');;    
+const divPassword = document.querySelector('#secretPasswordDiv');   
+
 
 const className ={
     0 : "NE",
@@ -20,6 +21,8 @@ const className ={
 
 // Generate randow numbers 
 function generateNum(){
+    divPassword.innerHTML = '';
+
     for(i = 0; i < 4; i++){
         secretPassword[i] =  Math.floor(Math.random() * 10);    
     };
@@ -34,21 +37,24 @@ function generateNum(){
 
 function displayNum(inputValue, checked){
     console.log(checked)
+    const newDiv = document.createElement('div');
     inputValue.forEach((password, index) => {
         console.log(password)
         const paragraphy = document.createElement("p");
         paragraphy.innerText = password;
 
-        paragraphy.classList.add(className[checked[index]])
+        paragraphy.classList.add(className[checked[index]]);
 
-        divPassword.appendChild(paragraphy);
-    });
+        newDiv.appendChild(paragraphy);
+    })
+
+    divPassword.appendChild(newDiv)
 }
 
 // Get input Value
 
 function checkedNum(){
-    const input = document.querySelector('#inputNum')
+    const input = document.querySelector('#inputNum');
     const inputValue = input.value.split('');
     const checkedArr = [0,0,0,0];
 
@@ -70,14 +76,10 @@ function checkedNum(){
             checkedArr[i] = 2;
 
             if(cows === 4){
-                alert("você venceu");
-
-                divPassword.innerHTML = '';
-
                 input.value = "";
                 input.focus();
 
-                generateNum();
+                winMensage();
             }
         }else{
             for(n = 0; n < 4; n++){
@@ -87,7 +89,7 @@ function checkedNum(){
             }
         }
     }
-    displayNum(inputValue,checkedArr);
+        displayNum(inputValue,checkedArr);
 }
 
 // Display password
@@ -99,4 +101,12 @@ function alertNum(){
         alert('Gere um número aleatório para visualizar o resultado');
     }
 
+}
+
+function winMensage(){
+    const title = "<h1>Você Venceu!!</h1>"
+    const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>"
+
+    divPassword.innerHTML += subtitle
+    divPassword.innerHTML += title;
 }

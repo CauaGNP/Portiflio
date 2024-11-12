@@ -12,17 +12,6 @@
     --ParagraphyFont: "Quantico";
 }
 
-/* Preparando para a troca de cores */
-#bodyLightTheme{
-        background-color: #FFFFFF;
-    
-    h1,h2,h3,p,a{
-        color: #0F0F0F;
-    }
-    svg{
-        fill: #0F0F0F;
-    }
-}
 
 *{
     margin: 0;
@@ -288,7 +277,7 @@ svg{
     justify-content: space-around;
 
 
-    .formationDiv    {
+    .formationDiv{
         width: 320px;
         height: 400px;
 

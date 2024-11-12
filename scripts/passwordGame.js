@@ -104,7 +104,7 @@ function displayAttempst(){
 
     
     if(attempts === 5){
-        loserMensage()
+        loserMensage();
     }
 }
 
@@ -120,16 +120,16 @@ function alertNum(){
 }
 
 function winMensage(){
-    const title = "<h1>Você Venceu!!</h1>"
-    const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>"
+    const title = "<h1>Você Venceu!!</h1>";
+    const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>";
 
     divPassword.innerHTML += subtitle;
     divPassword.innerHTML += title;
 }
 
 function loserMensage(){
-    const title = "<h1>Você Perdeu!!</h1>"
-    const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>"
+    const title = "<h1>Você Perdeu!!</h1>";
+    const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>";
 
     divPassword.innerHTML += subtitle;
     divPassword.innerHTML += title;

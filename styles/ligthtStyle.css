@@ -1,0 +1,107 @@
+
+:root{
+    --FontLightColorHeader: #F4F4F4;
+    --FontLightColorMain: #000000;
+    --SecondColorLight: rgb(20, 141, 179);
+    --HoverColorLigth: #38383883;
+}
+
+
+/* Preparando para a troca de cores */
+.bodyLightTheme{
+    background-color: #F4F4F4;
+
+    h1,h2,a,p{
+        color: var(--FontLightColorMain);
+    }
+
+    header{
+        h1, a{
+            color: var(--FontLightColorHeader);
+        }
+    }
+    
+    main{
+        #whoIam{
+            h1, p{
+                color: var(--FontLightColorMain);
+            }
+        }
+
+        svg{
+            path{
+                fill: var(--SecondColorLight);
+            }
+            circle{
+                fill: var(--SecondColorLight);
+            }
+        }
+
+        .tecnologies{
+            h1{
+                color: var(--SecondColorLight);
+            }
+        }
+
+        .portfolioExemple{
+            border: 1px solid var(--SecondColorLight);
+        }
+
+        #repository{
+            h1, a{
+                color: var(--FontLightColorMain);
+            }
+
+            a:hover{
+                color: var(--SecondColorLight);
+            }
+        }
+
+        #aboutMe{
+            p{
+                color: var(--FontLightColorMain);
+            }
+        }
+
+        #AcademyFormation{
+            .formationDiv{
+                border: 1px solid var(--SecondColorLight);
+
+                h2, h3, p{
+                    color: var(--FontLightColorMain);
+                }
+            }
+        }
+
+        #contacts{
+            .contactLink{
+                a, p{
+                    color: var(--FontLightColorMain);
+                }
+            }
+        }
+
+        #passwordDiv{
+            #passwordGame{
+                color:var(--FontLightColorMain)
+            }
+
+            #passwordGame:hover{
+                color: var(--FontLightColorHeader);
+                background-color: var(--HoverColorLigth);
+            }
+        }
+    }
+
+    footer{
+        h2{
+            color: var(--FontLightColorMain);
+        }
+
+        #socialFooter{
+            a{
+                color: var(--FontLightColorMain);
+            }
+        }
+    }
+}

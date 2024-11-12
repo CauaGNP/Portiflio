@@ -9,6 +9,7 @@ document.querySelector('#alertPassword')
 
 let secretPassword = [];
 let click = 0;
+let attempts = 0;
 
 const divPassword = document.querySelector('#secretPasswordDiv');   
 
@@ -89,7 +90,22 @@ function checkedNum(){
             }
         }
     }
-        displayNum(inputValue,checkedArr);
+
+    displayNum(inputValue,checkedArr);
+    displayAttempst()
+}
+
+function displayAttempst(){
+    attempts++;
+
+    if(attempts === 4){
+        alert("Você terá apenas uma tentativa");
+    }
+
+    
+    if(attempts === 5){
+        loserMensage()
+    }
 }
 
 // Display password
@@ -107,6 +123,14 @@ function winMensage(){
     const title = "<h1>Você Venceu!!</h1>"
     const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>"
 
-    divPassword.innerHTML += subtitle
+    divPassword.innerHTML += subtitle;
+    divPassword.innerHTML += title;
+}
+
+function loserMensage(){
+    const title = "<h1>Você Perdeu!!</h1>"
+    const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>"
+
+    divPassword.innerHTML += subtitle;
     divPassword.innerHTML += title;
 }

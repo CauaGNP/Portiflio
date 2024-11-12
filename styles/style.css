@@ -51,7 +51,8 @@ header{
     justify-content: space-between;
     align-items: center;
 
-    position: relative;
+    position: sticky;
+    top:0;
 
     h1{
         font-family: var(--TitlesFont);
@@ -369,22 +370,28 @@ svg{
 
 #passwordDiv{
     width: 200px;
+    height: 40px;
 
-    text-align: center;
     margin: auto;
 
-    a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    #passwordGame{
         font-family: var(--ParagraphyFont);
         font-weight: normal;
         text-decoration: none;
-        color: var(--FontColor);
-        height: 40px;
-        
-        padding: 8px;
 
+        color: var(--FontColor);
+
+        height: 40px;
+        width: 100%;
+        padding: 8px;
     }
 
-    a:hover {
+    #passwordGame:hover {
         background-color: var(--HoverColor);
 
         border-radius: 20px; 

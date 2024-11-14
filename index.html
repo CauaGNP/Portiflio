@@ -7,25 +7,29 @@
     <link rel="shortcut icon" href="favicon/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/styleMobile.css">
-    <link rel="stylesheet" href="styles/ligthtStyle.css">
+    <link rel="stylesheet" href="styles/ligthStyle.css">
     <script src="scripts/api.js" defer></script>
     <script src="scripts/lightDarkMode.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Cauã Gabriel</h1>
-        <div id="links">
-            <a href="#whoIam">Home</a>
-            <a href="#titleTecnologies">Tecnologias</a>
-            <a href="#titlePortfolio">Projetos</a>
-            <a href="#titleAboutMe">Sobre mim</a>
+        <div id="nameLink">
+            <h1>Cauã Gabriel</h1>
+            <div id="links">
+                <a href="#whoIam">Home</a>
+                <a href="#titleTecnologies">Tecnologias</a>
+                <a href="#titlePortfolio">Projetos</a>
+                <a href="#titleAboutMe">Sobre mim</a>
+            </div>
+        </div>
+
+        <div id="divButton">
+            <h2>Mudar tema:</h2>
+            <input type="checkbox" id="lightDarkMode"/>
+            <label for="lightDarkMode" class="buttonCircle"></label>
         </div>
     </header>
 
-    <span id="button">
-        <input type="checkbox" id="lightDarkMode"/>
-    </span>
-    
     <main>
 
         <div id="whoIam" >

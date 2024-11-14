@@ -7,6 +7,9 @@ document.querySelector('#submitNum')
 document.querySelector('#alertPassword')
     .addEventListener('click', alertNum);
 
+document.querySelector('#displayRules')
+    .addEventListener('click', displayRules)
+
 let secretPassword = [];
 let click = 0;
 let attempts = 0;
@@ -133,4 +136,16 @@ function loserMensage(){
 
     divPassword.innerHTML += subtitle;
     divPassword.innerHTML += title;
+}
+
+function displayRules(){
+    const footer = document.querySelector('footer')
+    const line = document.querySelector('#line');
+    const buttonDisplayRules = document.querySelector('#displayRules');
+
+    footer.style.display = footer.style.display === '' || footer.style.display === 'none' ? 'block' : 'none';
+
+    line.style.display = line.style.display === '' || line.style.display === 'none' ? 'block' : 'none';
+
+    buttonDisplayRules.innerText = footer.style.display === 'block' ? 'Esconder Senha' : 'Revelar Senha';
 }

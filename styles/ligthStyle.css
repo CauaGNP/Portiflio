@@ -1,4 +1,3 @@
-
 :root{
     --FontLightColorHeader: #F4F4F4;
     --FontLightColorMain: #000000;
@@ -11,12 +10,18 @@
 .bodyLightTheme{
     background-color: #F4F4F4;
 
+    #button{
+        label{
+            color: var(--FontLightColorMain);
+        }
+    }
+
     h1,h2,a,p{
         color: var(--FontLightColorMain);
     }
 
     header{
-        h1, a{
+        h1, h2, a{
             color: var(--FontLightColorHeader);
         }
     }

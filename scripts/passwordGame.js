@@ -94,11 +94,11 @@ function checkedNum(){
     }
 
     displayNum(inputValue,checkedArr);
-    attempst()
+    attempst(cows)
 }
 
 // Attempst function
-function attempst(){
+function attempst(cows){
     attempts++;
 
     if(attempts === 4){
@@ -106,7 +106,7 @@ function attempst(){
     }
 
     
-    if(attempts === 5){
+    if(attempts === 5 && cows != 4){
         loserMensage();
     }
 }

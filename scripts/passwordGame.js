@@ -5,7 +5,7 @@ document.querySelector('#submitNum')
     .addEventListener('click', checkedNum);
 
 document.querySelector('#alertPassword')
-    .addEventListener('click', alertNum);
+    .addEventListener('click', revealPassword);
 
 document.querySelector('#displayRules')
     .addEventListener('click', displayRules)
@@ -23,9 +23,10 @@ const className ={
     2 : "PC"
 }
 
-// Generate randow numbers 
+// Generate random numbers 
 function generateNum(){
     divPassword.innerHTML = '';
+    attempts = 0;
 
     for(i = 0; i < 4; i++){
         secretPassword[i] =  Math.floor(Math.random() * 10);    
@@ -37,8 +38,7 @@ function generateNum(){
     console.log(secretPassword);
 }
 
-// Display input numbers
-
+// Display numbers
 function displayNum(inputValue, checked){
     console.log(checked)
     const newDiv = document.createElement('div');
@@ -56,7 +56,6 @@ function displayNum(inputValue, checked){
 }
 
 // Get input Value
-
 function checkedNum(){
     const input = document.querySelector('#inputNum');
     const inputValue = input.value.split('');
@@ -95,10 +94,11 @@ function checkedNum(){
     }
 
     displayNum(inputValue,checkedArr);
-    displayAttempst()
+    attempst()
 }
 
-function displayAttempst(){
+// Attempst function
+function attempst(){
     attempts++;
 
     if(attempts === 4){
@@ -111,8 +111,8 @@ function displayAttempst(){
     }
 }
 
-// Display password
-function alertNum(){
+// Reveal password
+function revealPassword(){
     if(click != 0){
         alert(`Os números secretos são: ${secretPassword}`);
         generateNum();
@@ -122,6 +122,7 @@ function alertNum(){
 
 }
 
+// Display win mensage
 function winMensage(){
     const title = "<h1>Você Venceu!!</h1>";
     const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>";
@@ -130,6 +131,7 @@ function winMensage(){
     divPassword.innerHTML += title;
 }
 
+// Display loser mensage
 function loserMensage(){
     const title = "<h1>Você Perdeu!!</h1>";
     const subtitle = "<h2>Clique no botão para gerar uma nova senha!!</h2>";
@@ -138,6 +140,7 @@ function loserMensage(){
     divPassword.innerHTML += title;
 }
 
+// Display rules
 function displayRules(){
     const footer = document.querySelector('footer')
     const line = document.querySelector('#line');
@@ -147,5 +150,5 @@ function displayRules(){
 
     line.style.display = line.style.display === '' || line.style.display === 'none' ? 'block' : 'none';
 
-    buttonDisplayRules.innerText = footer.style.display === 'block' ? 'Esconder Senha' : 'Revelar Senha';
+    buttonDisplayRules.innerText = footer.style.display === 'block' ? 'Ocultar Regras' : 'Ver Regras';
 }

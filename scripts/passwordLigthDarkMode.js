@@ -4,7 +4,7 @@ function transitionMode(){
 
     if(localStore === '0'){
         document.querySelector('body')
-        .classList.toggle(' ');
+        .classList.toggle();
     }else{
         document.querySelector('body')
         .classList.toggle('bodyLightTheme');
